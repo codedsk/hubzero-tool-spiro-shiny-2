@@ -1,4 +1,6 @@
 library(shiny)
+library(ggplot2)
+library(plotly)
 
 spiro <- function(n1,n2,n3) {
   t <- seq(0,1,length.out=1000)
@@ -7,10 +9,14 @@ spiro <- function(n1,n2,n3) {
   return (result)
 }
 
-# Define server logic required to draw a histogram
-shinyServer(function(input, output) {
-  output$spirograph <- renderPlot({
+# Define server logic required to draw a spirograph
+server <- function(input, output) {
+  output$spirograph <- renderPlotly({
     result <- spiro(input$n1,input$n2,input$n3)
-    plot(result,type="l")
+    ggplot(data=result,aes(x=x,y=y)) +
+        geom_path() +
+        xlab("Real(z)") +
+        ylab("Imag(z)")
   })
-})
+}
+
