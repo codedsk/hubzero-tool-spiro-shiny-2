@@ -3,7 +3,7 @@
 # include rstudio-server to get pandoc
 
 /usr/bin/invoke_app "$@" -t spiroshinyapp2 \
-    -u R-3.2.1 \
+    -u R-3.2.5 \
     -u rstudio-server-1.0.44 \
     -u wrwroxy-0.1 \
     -u wrapprun-0.1 \
