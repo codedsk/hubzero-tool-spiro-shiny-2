@@ -8,6 +8,6 @@
     -u wrwroxy-0.1 \
     -u wrapprun-0.1 \
     -w "none" \
-    -c "xview -fullscreen -onroot \${R_INSTALL_DIR}/lib/R/library/png/img/Rlogo.png" \
+    -c "xview -fullscreen -onroot \${R_LOGO_PATH}" \
     -c "wrwroxy --stream-log --logfile /dev/null" \
     -C "wrapprun --port 8001 --type shiny @tool/bin"
